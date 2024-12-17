@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اليوم العالمي لمكافحة الفساد</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #e0f7fa, #b2dfdb);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #00695c;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #00796b;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        input[type="text"] {
+            width: 70%;
+            max-width: 250px;
+            padding: 8px;
+            margin: 10px auto;
+            border: 1px solid #80cbc4;
+            border-radius: 8px;
+            display: block;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            text-align: center;
+        }
+        button {
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+        .card {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #80cbc4;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            background: linear-gradient(to bottom, #e0f7fa, #b2dfdb); /* نفس ألوان البطاقة */
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #00796b; /* لون هادئ متناسق */
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .video-container {
+            margin-top: 15px;
+        }
+        video {
+            width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .download-button {
+            display: inline-block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+        }
+        .download-button:hover {
+            background-color: #004d40;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #004d40;
+        }
+        .footer span {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        #output-name, #output-school {
+            font-size: 14px; /* حجم أصغر */
+            color: #00796b; /* نفس اللون الهادئ */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* تأثير ظل */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+<h1 style="font-size: 20px;"
+</h1>
+“مبادرة اليوم العالمي لمكافحة الفساد في الابتدائية الخامسة والطفولة المبكرة بسكاكا تهدف إلى غرس قيم النزاهة والشفافية في نفوس الطالبات، وتعزيز الوعي بأهمية مكافحة الفساد لبناء مجتمع أفضل”</h1>
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" placeholder="اكتب اسمك">
+        
+        <label for="school">المدرسة:</label>
+        <input type="text" id="school" placeholder="اكتب اسم المدرسة">
+        
+        <button onclick="generateCard()">عرض البطاقة</button>
+        
+        <div id="output" class="card" style="display: none;">
+            <p><strong>الاسم:</strong> <span id="output-name"></span></p>
+            <p><strong>المدرسة:</strong> <span id="output-school"></span></p>
+            <img src="anti-corruption-card.jpg" alt="بطاقة مكافحة الفساد">
+            
+            <div class="video-container">
+                <video controls>
+                    <source src="video-file.mp4" type="video/mp4">
+                    متصفحك لا يدعم عرض الفيديو.
+                </video>
+            </div>
+
+            <a href="anti-corruption-card.jpg" class="download-button" download>تحميل البطاقة</a>
+            <div class="footer">
+                <span>برمجة المعلمة : منيرة خليفة الفالح</span>
+                <span>مديرة المدرسة : هدى دخيل البيالي</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateCard() {
+            const name = document.getElementById('name').value.trim();
+            const school = document.getElementById('school').value.trim();
+            
+            if (name === "" || school === "") {
+                alert("الرجاء إدخال الاسم واسم المدرسة قبل عرض البطاقة.");
+                return;
+            }
+
+            document.getElementById('output-name').innerText = name;
+            document.getElementById('output-school').innerText = school;
+            document.getElementById('output').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
